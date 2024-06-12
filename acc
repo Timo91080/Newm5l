@@ -1,0 +1,50 @@
+import React from 'react';
+import { Text, View, Image, StyleSheet, Dimensions } from 'react-native';
+
+const Accueil = () => {
+  return (
+    <View style={styles.container}>
+      <Image
+        source={require('../style/boxer.jpg')} // Remplacez par le chemin de votre image
+        style={styles.backgroundImage}
+      />
+      <View style={styles.overlay}>
+        <Text style={styles.titre}>
+          Maison De Ligue
+        </Text>
+        <Text style={styles.parag}>
+          Une formation, un bras musclé
+        </Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  },
+  backgroundImage: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
+    position: 'absolute',
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  titre: {
+    color: 'white',
+    fontSize: 24,
+    fontWeight: 'bold',
+    position: "relative",
+    borderRadius: 10,
+  },
+});
+
+export default Accueil;
